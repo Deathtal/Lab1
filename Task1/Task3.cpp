@@ -1,5 +1,5 @@
 #include <iostream>
-#define loop_type 1
+#define loop_type 1 //change to 1, 2 or 3 to change the type of loop used. for, while and do..while respectively
 
 int main() {
 	int n;
@@ -25,6 +25,4 @@ int main() {
 
 
 #endif
-	std::cin.get();
-	std::cin.get();
 }
