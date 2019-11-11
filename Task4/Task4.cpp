@@ -74,7 +74,7 @@ int main() {
 	std::cout << "Name: " << person1.GetName() << std::endl;
 	std::cout << "Age: " << person1.GetAge() << std::endl;
 	std::cout << "Gender: " << person1.GetGender() << std::endl;
-	std::cout << "Married: " << person1.GetMarried() << std::endl;
+	std::cout << "Married: " << (person1.GetMarried() ? "True" : "False") << std::endl;
 	std::cout << "Address: " << person1.GetAddress() << std::endl;
 	std::cout << "Height: " << person1.GetHeight() << "mm" << std::endl;
 }

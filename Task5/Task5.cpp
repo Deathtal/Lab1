@@ -1,5 +1,4 @@
 #include <stdio.h>
-#include <stdlib.h>
 
 int main() {
 	char name[20];
@@ -11,17 +10,17 @@ int main() {
 
 
 	printf_s("Please enter your name: ");
-	scanf_s("%19s", name, (unsigned)_countof(name));
+	scanf_s("%19s", name, sizeof name);
 
 	printf_s("Please enter your age: ");
 	scanf_s("%d", &age);
 
 	printf_s("Please enter your gender (M/F/O): ");
-	scanf_s("%1s", gender, (unsigned)_countof(gender));
+	scanf_s("%1s", gender, sizeof gender);
 
 	char married_c[6];
 	printf_s("Are you married? (true/false): ");
-	scanf_s("%5s", married_c, (unsigned)_countof(married_c));
+	scanf_s("%5s", married_c, sizeof married_c);
 	if (married_c == "true") {
 		married = 1;
 	}
@@ -30,7 +29,7 @@ int main() {
 	}
 
 	printf_s("Please enter your address: ");
-	scanf_s("%19s", address, (unsigned)_countof(address));
+	scanf_s("%19s", address, sizeof address);
 
 	printf_s("Please enter your height in milimeters: ");
 	scanf_s("%d", &height);
