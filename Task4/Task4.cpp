@@ -23,34 +23,32 @@ public:
 	const void askAge() {
 		std::cout << "Please enter your age: ";
 		std::cin >> age;
+		std::cin.ignore();
 	}
 
 	const void askGender() {
 		std::cout << "What is your gender? (M/F/O): ";
 		std::cin >> gender;
+		std::cin.ignore();
 	}
 
 	const void askMarried() {
-		std::cout << "Are you married? (true/false): ";
-		std::string mrg_str;
+		std::cout << "Are you married? (y/N): ";
+		char mrg_str;
 		std::cin >> mrg_str;
-		if (mrg_str == "true") {
-			married = true;
-		}
-		else {
-			married = false;
-		}
+		std::cin.ignore();
+		married = !(mrg_str == 'n' || mrg_str == 'N');
 	}
 
 	const void askAddress() {
 		std::cout << "Please enter your address: ";
-		std::cin.ignore(); //std::cin leaves a \n behind. So that it does not interfere with std::getline this line of text is needed
 		std::getline(std::cin, address);
 	}
 
 	const void askHeight() {
 		std::cout << "Please enter your height in milimeters: ";
 		std::cin >> height;
+		std::cin.ignore();
 	}
 
 	const std::string& GetName() const { return name; }
@@ -71,7 +69,7 @@ int main() {
 	person1.askAddress();
 	person1.askHeight();
 
-	std::cout << "Name: " << person1.GetName() << std::endl;
+	std::cout << "\nName: " << person1.GetName() << std::endl;
 	std::cout << "Age: " << person1.GetAge() << std::endl;
 	std::cout << "Gender: " << person1.GetGender() << std::endl;
 	std::cout << "Married: " << (person1.GetMarried() ? "True" : "False") << std::endl;
